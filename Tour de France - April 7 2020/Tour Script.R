@@ -59,13 +59,13 @@ n_stage_data <- tdf_stages %>%
 
 #Create Graphs
 cm_plot <-
-  ggplot(n_stage_data, aes(Year, percentage, fill = Type)) +
+  ggplot(n_stage_data, aes(Year, percentage*100, fill = Type)) +
   geom_area(aes(colour = Type, fill = after_scale(alpha(colour, 0.4))), size = 1) +
   scale_colour_carto_d(palette = 'TealGrn') +
   labs(
     title = 'More Stages are Planned for the Mountains with Progressive Tour Stages',
     subtitle = 'How was each tour shaped in terms of Type of stage?',
-    y = 'Percent of Tour Edition (%)',
+    y = 'Percent of Tour (%)',
     colour = 'Type of Stage') +
   theme_classic() +
   theme(
